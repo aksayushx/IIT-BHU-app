@@ -349,3 +349,14 @@ abstract class BuiltTeamMemberPost
   static Serializer<BuiltTeamMemberPost> get serializer =>
       _$builtTeamMemberPostSerializer;
 }
+
+// !--------------------------------------------------------------------------------------------------------------------
+abstract class BuiltContacts
+    implements Built<BuiltContacts, BuiltContactsBuilder> {
+  @nullable
+  BuiltList<ContactPost> get contacts;
+
+  BuiltContacts._();
+  factory BuiltContacts([updates(BuiltContactsBuilder b)]) = _$BuiltContacts;
+  static Serializer<BuiltContacts> get serializer => _$builtContactsSerializer;
+}
