@@ -142,4 +142,14 @@ class _$PostApiService extends PostApiService {
     return client.send<BuiltList<BuiltWorkshopSummaryPost>,
         BuiltWorkshopSummaryPost>($request);
   }
+
+  Future<Response<BuiltList<ContactPost>>> updateContacts(
+      int id, String token, BuiltContacts body) {
+    final $url = '/workshops/${id}/update-contacts/';
+    final $headers = {'Authorization': token};
+    final $body = body;
+    final $request =
+        Request('PATCH', $url, client.baseUrl, body: $body, headers: $headers);
+    return client.send<BuiltList<ContactPost>, ContactPost>($request);
+  }
 }

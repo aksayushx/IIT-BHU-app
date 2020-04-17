@@ -10,6 +10,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BuiltAllCouncilsPost.serializer)
       ..add(BuiltAllWorkshopsPost.serializer)
       ..add(BuiltClubPost.serializer)
+      ..add(BuiltContacts.serializer)
       ..add(BuiltCouncilPost.serializer)
       ..add(BuiltProfilePost.serializer)
       ..add(BuiltTeamMemberPost.serializer)
@@ -36,6 +37,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ClubListPost)]),
           () => new ListBuilder<ClubListPost>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(ContactPost)]),
+          () => new ListBuilder<ContactPost>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ContactPost)]),
           () => new ListBuilder<ContactPost>())
